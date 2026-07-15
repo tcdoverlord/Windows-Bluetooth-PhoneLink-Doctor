@@ -1,137 +1,217 @@
-# 🚀 PROJECT_NAME
+# 📱 Windows Bluetooth PhoneLink Doctor
 
-> **Short project tagline goes here.**
+> **Diagnose • Repair • Restore Windows Bluetooth and Microsoft Phone Link**
 
-```{=html}
 <p align="center">
-```
-`<img src="images/architecture-v1.0.0.png" width="100%" alt="Architecture">`{=html}
-```{=html}
+  <img src="images/Phone%20Link%20and%20Bluetooth%20Doctor%20diag.png" alt="Windows Bluetooth PhoneLink Doctor Architecture" width="100%">
 </p>
-```
-```{=html}
+
 <p align="center">
-```
+
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows&logoColor=white)
 ![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
-![Batch](https://img.shields.io/badge/Batch-Launcher-444444?style=for-the-badge)
-![JSON](https://img.shields.io/badge/JSON-Configuration-success?style=for-the-badge)
+![Batch](https://img.shields.io/badge/Batch-Windows-informational?style=for-the-badge)
 ![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub
-CLI](https://img.shields.io/badge/GitHub_CLI-gh-black?style=for-the-badge&logo=github)
 ![License](https://img.shields.io/badge/License-TCDOVERLORD-orange?style=for-the-badge)
 
-```{=html}
 </p>
-```
 
-------------------------------------------------------------------------
+---
 
 # 📖 Overview
 
-Explain what the project does in one short paragraph.
+Windows Bluetooth PhoneLink Doctor is a lightweight PowerShell toolkit designed to diagnose and repair common Windows Bluetooth and Microsoft Phone Link issues.
+
+Instead of manually restarting services, checking drivers, or navigating multiple Windows settings pages, the toolkit automates common troubleshooting tasks while providing progress feedback and logging.
+
+---
 
 # ✨ Features
 
--   Feature One
--   Feature Two
--   Feature Three
--   Logging
--   Automation
+- 🔵 Bluetooth diagnostics
+- 📱 Microsoft Phone Link diagnostics
+- 🔧 Automated repair workflow
+- ⚙ Windows service verification
+- 📋 Progress window
+- 📝 Log generation
+- 🛡 Safe PowerShell execution
+
+---
 
 # 📸 Screenshots
 
-Add screenshots here.
+### Architecture Overview
+
+<p align="center">
+  <img src="images/Phone%20Link%20and%20Bluetooth%20Doctor%20diag.png" width="90%">
+</p>
+
+---
 
 # 🏗 Architecture
 
-``` text
-Launcher
-   │
-Core Engine
-   │
-Modules
-   │
-Results
+```text
+RUN_PHONE_LINK_DOCTOR.bat
+            │
+            ▼
+PhoneLink-Bluetooth-Doctor.ps1
+            │
+ ┌──────────┼──────────┐
+ │          │          │
+ ▼          ▼          ▼
+Bluetooth  Phone Link  Windows
+Checks      Checks     Services
+ │          │          │
+ └──────────┼──────────┘
+            ▼
+    Diagnostic Engine
+            │
+            ▼
+    Automated Repairs
+            │
+            ▼
+     Progress Window
+            │
+            ▼
+        Log Results
 ```
+
+---
 
 # ⚙ Execution Pipeline
 
-``` text
+```text
 Launch
-↓
-Verify
-↓
-Initialize
-↓
-Run Modules
-↓
-Repair
-↓
-Logs
-↓
+   │
+   ▼
+Verify Administrator
+   │
+   ▼
+Check Bluetooth
+   │
+   ▼
+Check Phone Link
+   │
+   ▼
+Verify Windows Services
+   │
+   ▼
+Run Repairs
+   │
+   ▼
+Generate Logs
+   │
+   ▼
 Complete
 ```
 
-# 📂 Project Tree
+---
 
-Generate using:
+# 📂 Project Structure
 
-``` powershell
-tree /F /A
+```text
+PhoneLink-Bluetooth-Doctor-v1.0.0
+│
+├── .gitignore
+├── LICENSE
+├── README.md
+├── RUN_PHONE_LINK_DOCTOR.bat
+│
+├── config
+│   └── .gitkeep
+│
+├── images
+│   └── Phone Link and Bluetooth Doctor diag.png
+│
+├── logs
+│   └── .gitkeep
+│
+└── scripts
+    ├── PhoneLink-Bluetooth-Doctor.ps1
+    └── PhoneLink-Progress.ps1
 ```
 
-Paste the output here.
+---
 
 # 💾 Installation
 
-``` powershell
-git clone https://github.com/tcdoverlord/PROJECT_NAME.git
-cd PROJECT_NAME
+```powershell
+git clone https://github.com/tcdoverlord/Windows-Bluetooth-PhoneLink-Doctor.git
+
+cd Windows-Bluetooth-PhoneLink-Doctor
 ```
+
+---
 
 # ▶ Quick Start
 
-``` powershell
-RUN_PROJECT.bat
+Launch the application by running:
+
+```text
+RUN_PHONE_LINK_DOCTOR.bat
 ```
+
+Or from PowerShell:
+
+```powershell
+.\RUN_PHONE_LINK_DOCTOR.bat
+```
+
+---
 
 # 🛣 Roadmap
 
-  Version   Status
-  --------- --------------------
-  v1.0      ✅ Initial Release
-  v1.1      ⬜ Improvements
-  v2.0      ⬜ Major Features
+| Version | Status |
+|---------|--------|
+| v1.0.0 | ✅ Initial Release |
+| v1.1.0 | ⬜ Enhanced diagnostics |
+| v1.2.0 | ⬜ Driver repair improvements |
+| v2.0.0 | ⬜ Modular repair engine & GUI |
+
+---
 
 # 📜 Version History
 
-  Version   Notes
-  --------- ------------------------
-  1.0.0     Initial Public Release
+| Version | Description |
+|---------|-------------|
+| 1.0.0 | Initial public release with Bluetooth diagnostics, Phone Link diagnostics, automated repairs, progress UI, and logging. |
+
+---
 
 # 📄 License
 
-Personal Use License by **TCDOVERLORD**.
+Copyright © 2026 **TCDOVERLORD**
 
--   ✅ Personal
--   ✅ Educational
--   ❌ Commercial without permission
+This project is released under the **TCDOVERLORD Personal Use License**.
+
+- ✅ Personal Use
+- ✅ Educational Use
+- ✅ Learning
+- ❌ Commercial Use without permission
+
+---
 
 # 👤 Author
 
-**TCDOVERLORD**
+## TCDOVERLORD
 
-Building practical Windows automation tools.
+Building practical Windows automation tools for developers, IT professionals, and power users.
 
 > **We Automate So You Don't Have To.**
 
+---
+
 # ❤️ Support
 
--   ⭐ Star the repository
--   🐞 Report issues
--   💡 Request features
+If this project helped you:
+
+- ⭐ Star the repository
+- 🐞 Report bugs through GitHub Issues
+- 💡 Submit feature requests
+- 🤝 Share the project with others
+
+---
 
 # ⭐ Star History
 
-Add Star History chart after the project gains community stars.
+Star history will be added as the project grows.
