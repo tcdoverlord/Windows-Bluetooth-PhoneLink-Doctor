@@ -1,40 +1,145 @@
-# Phone Link Bluetooth Doctor — TCDOVERLORD
+# 🏗️ TCDOVERLORD Repository Standard
 
-Consent-first Windows Phone Link Bluetooth call diagnostics and repair.
+> **Official GitHub README Template v1.0**
 
-## Run the Doctor
+```{=html}
+<p align="center">
+```
+`<img src="images/architecture-v1.0.0.png" width="100%">`{=html}
+```{=html}
+</p>
+```
 
-Right-click `RUN_PHONE_LINK_DOCTOR.bat` and choose **Run as administrator** if Windows requests administrator permission.
+------------------------------------------------------------------------
 
-## Final menu
+## 1️⃣ Hero Architecture Image
 
-1. Run diagnostics only  
-2. Choose or change speaker, microphone, and Bluetooth phone  
-3. Configure Windows call speaker and microphone  
-4. Run diagnostics, review, then offer safe Phone Link repair  
-5. Reset Doctor selections and run setup again  
-6. Open newest log folder  
-7. Exit  
+Place a full-width architecture diagram at the top of the repository.
 
-## Important
+``` markdown
+<p align="center">
+<img src="images/architecture-v1.0.0.png" width="100%">
+</p>
+```
 
-The selected microphone and speaker must be set in Windows as both:
+------------------------------------------------------------------------
 
-- Default Device
-- Default Communication Device
+## 2️⃣ Technology Cards / Badges
 
-Menu option 3 opens the correct Windows Playback and Recording panels and guides the user through this.
+``` markdown
+<p align="center">
 
-## After a repair
+![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![Batch](https://img.shields.io/badge/Batch-Launcher-444444?style=for-the-badge)
+![JSON](https://img.shields.io/badge/JSON-Configuration-success?style=for-the-badge)
+![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub CLI](https://img.shields.io/badge/GitHub_CLI-gh-black?style=for-the-badge&logo=github)
+![License](https://img.shields.io/badge/License-TCDOVERLORD-orange?style=for-the-badge)
 
-When the repair finishes, the Doctor displays a large restart message. Restart the computer before testing Phone Link again.
+</p>
+```
 
-Type `EXIT` at the final prompt to close Phone Link Bluetooth Doctor, then restart Windows normally.
+------------------------------------------------------------------------
 
-## Safety
+## 3️⃣ What Is It?
 
-The tool does not remove, uninstall, forget, unpair, or delete devices. It does not force-kill the Bluetooth Audio Gateway `svchost.exe`. If that service becomes stuck in `STOP_PENDING`, the tool requires a normal Windows restart.
+Write a short paragraph explaining the project in under 30 seconds.
 
-## Optional script signing
+------------------------------------------------------------------------
 
-The included launcher does not require a separate signed-launcher file. Users who maintain their own PowerShell signing setup may sign the `.ps1` files themselves.
+## 4️⃣ Features
+
+-   🔵 Core Feature
+-   ⚙ Automation
+-   🛡 Safety
+-   📋 Logging
+-   ⚡ Performance
+
+------------------------------------------------------------------------
+
+## 5️⃣ Architecture
+
+``` text
+Launcher
+   │
+   ▼
+Core Engine
+   │
+┌──┴──┐
+│     │
+Checks Repairs
+│     │
+└──┬──┘
+   ▼
+ Logging
+```
+
+------------------------------------------------------------------------
+
+## 6️⃣ Project Tree
+
+Generate with:
+
+``` powershell
+tree /F /A
+```
+
+Paste the output here.
+
+------------------------------------------------------------------------
+
+## 7️⃣ Requirements
+
+-   Windows 10 / 11
+-   PowerShell 5.1+
+-   Administrator privileges
+-   Any project-specific requirements
+
+------------------------------------------------------------------------
+
+## 8️⃣ Quick Start
+
+``` powershell
+git clone https://github.com/tcdoverlord/REPOSITORY.git
+
+cd REPOSITORY
+
+RUN_PROJECT.bat
+```
+
+------------------------------------------------------------------------
+
+## 9️⃣ Roadmap
+
+``` text
+v1.0
+✔ Initial Release
+
+v1.1
+⬜ Improvements
+
+v2.0
+⬜ Major Features
+```
+
+------------------------------------------------------------------------
+
+## 🔟 License
+
+-   ✅ Personal Use
+-   ✅ Educational Use
+-   ✅ Learning
+-   ❌ Commercial Use (without permission)
+
+------------------------------------------------------------------------
+
+## 1️⃣1️⃣ Author
+
+## 👤 Author
+
+**TCDOVERLORD**
+
+Building practical Windows automation tools.
+
+> **We Automate So You Don't Have To.**
