@@ -1,217 +1,216 @@
 # 📱 Windows Bluetooth PhoneLink Doctor
 
-> **Diagnose • Repair • Restore Windows Bluetooth and Microsoft Phone Link**
+> **Diagnose • Repair • Restore Windows Bluetooth, Audio, and Microsoft Phone Link**
 
 <p align="center">
-  <img src="images/Phone%20Link%20and%20Bluetooth%20Doctor%20diag.png" alt="Windows Bluetooth PhoneLink Doctor Architecture" width="100%">
+  <img src="images/Windows_Bluetooth_PhoneLink_Doctor_Hero.png" alt="Windows Bluetooth PhoneLink Doctor" width="100%">
 </p>
 
-<p align="center">
+## Technology Cards
 
-![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?style=for-the-badge&logo=windows&logoColor=white)
-![PowerShell](https://img.shields.io/badge/PowerShell-5.1+-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
-![Batch](https://img.shields.io/badge/Batch-Windows-informational?style=for-the-badge)
-![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=for-the-badge&logo=git&logoColor=white)
-![License](https://img.shields.io/badge/License-TCDOVERLORD-orange?style=for-the-badge)
-
-</p>
+![Windows](https://img.shields.io/badge/Platform-Windows_10%20%7C%2011-0078D4?style=for-the-badge&logo=windows)
+![PowerShell](https://img.shields.io/badge/Engine-PowerShell_5.1+-5391FE?style=for-the-badge&logo=powershell)
+![Batch](https://img.shields.io/badge/Launcher-Batch-4D4D4D?style=for-the-badge)
+![License](https://img.shields.io/badge/License-TCDOVERLORD_Personal_Learning_License-orange?style=for-the-badge)
 
 ---
 
-# 📖 Overview
+# Overview
 
-Windows Bluetooth PhoneLink Doctor is a lightweight PowerShell toolkit designed to diagnose and repair common Windows Bluetooth and Microsoft Phone Link issues.
+Windows Bluetooth PhoneLink Doctor is a Windows diagnostic and repair utility that automates many of the most common Bluetooth, audio, and Microsoft Phone Link troubleshooting steps.
 
-Instead of manually restarting services, checking drivers, or navigating multiple Windows settings pages, the toolkit automates common troubleshooting tasks while providing progress feedback and logging.
-
----
-
-# ✨ Features
-
-- 🔵 Bluetooth diagnostics
-- 📱 Microsoft Phone Link diagnostics
-- 🔧 Automated repair workflow
-- ⚙ Windows service verification
-- 📋 Progress window
-- 📝 Log generation
-- 🛡 Safe PowerShell execution
+Instead of manually restarting services, navigating multiple settings pages, or guessing which microphone or speakers Windows is using, the tool performs automated checks, attempts safe repairs, records diagnostic logs, and guides you through selecting the correct devices when needed.
 
 ---
 
-# 📸 Screenshots
+# Features
 
-### Architecture Overview
-
-<p align="center">
-  <img src="images/Phone%20Link%20and%20Bluetooth%20Doctor%20diag.png" width="90%">
-</p>
+- Automated Bluetooth diagnostics and repair
+- Microsoft Phone Link diagnostics
+- Windows audio service verification
+- Simple **RUN / RESET** workflow
+- Progress window during repairs
+- Diagnostic log generation
+- Opens the Windows Sound Control Panel (`mmsys.cpl`) for manual audio selection
+- Smart restart recommendations (only when appropriate)
 
 ---
 
-# 🏗 Architecture
+# Quick Fix
+
+If audio still isn't working after repairs:
+
+1. Press **Win + R**
+2. Type:
 
 ```text
-RUN_PHONE_LINK_DOCTOR.bat
-            │
-            ▼
-PhoneLink-Bluetooth-Doctor.ps1
-            │
- ┌──────────┼──────────┐
- │          │          │
- ▼          ▼          ▼
-Bluetooth  Phone Link  Windows
-Checks      Checks     Services
- │          │          │
- └──────────┼──────────┘
-            ▼
-    Diagnostic Engine
-            │
-            ▼
-    Automated Repairs
-            │
-            ▼
-     Progress Window
-            │
-            ▼
-        Log Results
+mmsys.cpl
 ```
+
+3. Open the **Recording** tab.
+4. Speak into each microphone and watch for the green activity meter.
+5. Right-click the correct microphone.
+6. Select **Set as Default Device**.
+7. Select **Set as Default Communication Device**.
+8. Click **Apply** then **OK**.
+
+To change speakers:
+
+1. Open the **Playback** tab.
+2. Right-click the correct speakers or headset.
+3. Choose **Set as Default Device**.
+4. Click **Apply** then **OK**.
 
 ---
 
-# ⚙ Execution Pipeline
+# Architecture
+
+```mermaid
+flowchart TD
+A[RUN_PHONE_LINK_DOCTOR.bat] --> B[PhoneLink-Bluetooth-Doctor.ps1]
+B --> C[Bluetooth Checks]
+B --> D[Phone Link Checks]
+B --> E[Audio Service Checks]
+C --> F[Repair Engine]
+D --> F
+E --> F
+F --> G[Progress Window]
+G --> H[Logs]
+H --> I[Open mmsys.cpl if needed]
+```
+
+# Execution Pipeline
 
 ```text
 Launch
-   │
-   ▼
+ ↓
 Verify Administrator
-   │
-   ▼
-Check Bluetooth
-   │
-   ▼
-Check Phone Link
-   │
-   ▼
-Verify Windows Services
-   │
-   ▼
+ ↓
+Bluetooth Checks
+ ↓
+Phone Link Checks
+ ↓
+Audio Service Checks
+ ↓
 Run Repairs
-   │
-   ▼
+ ↓
 Generate Logs
-   │
-   ▼
+ ↓
 Complete
 ```
 
----
-
-# 📂 Project Structure
+# Project Tree
 
 ```text
-PhoneLink-Bluetooth-Doctor-v1.0.0
-│
+Windows-Bluetooth-PhoneLink-Doctor/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
 ├── RUN_PHONE_LINK_DOCTOR.bat
-│
-├── config
-│   └── .gitkeep
-│
-├── images
-│   └── Phone Link and Bluetooth Doctor diag.png
-│
-├── logs
-│   └── .gitkeep
-│
-└── scripts
+├── config/
+├── images/
+├── logs/
+└── scripts/
     ├── PhoneLink-Bluetooth-Doctor.ps1
     └── PhoneLink-Progress.ps1
 ```
 
----
-
-# 💾 Installation
+# Installation
 
 ```powershell
 git clone https://github.com/tcdoverlord/Windows-Bluetooth-PhoneLink-Doctor.git
-
 cd Windows-Bluetooth-PhoneLink-Doctor
 ```
 
----
+# Quick Start
 
-# ▶ Quick Start
-
-Launch the application by running:
+Double-click:
 
 ```text
 RUN_PHONE_LINK_DOCTOR.bat
 ```
 
-Or from PowerShell:
+Menu options:
 
-```powershell
-.\RUN_PHONE_LINK_DOCTOR.bat
+- **RUN** — Performs diagnostics and repairs.
+- **RESET** — Clears saved audio/device selections so the next RUN starts fresh.
+- **EXIT** — Closes the application.
+
+# Logs
+
+Diagnostic logs are written to:
+
+```text
+logs/
 ```
 
----
+Include the latest log when reporting issues.
 
-# 🛣 Roadmap
+# Roadmap
 
-| Version | Status |
-|---------|--------|
-| v1.0.0 | ✅ Initial Release |
-| v1.1.0 | ⬜ Enhanced diagnostics |
-| v1.2.0 | ⬜ Driver repair improvements |
-| v2.0.0 | ⬜ Modular repair engine & GUI |
+- [x] Simplified RUN / RESET workflow
+- [x] Smart restart detection
+- [ ] Enhanced Bluetooth diagnostics
+- [ ] Additional driver repair options
+- [ ] Optional graphical interface
 
----
+# Version History
 
-# 📜 Version History
+## v1.1.1
 
-| Version | Description |
-|---------|-------------|
-| 1.0.0 | Initial public release with Bluetooth diagnostics, Phone Link diagnostics, automated repairs, progress UI, and logging. |
+- Simplified menu to RUN / RESET / EXIT
+- Added smart restart recommendations
+- Integrated Windows Sound Control Panel guidance
+- Improved audio device recovery workflow
 
----
+# License
 
-# 📄 License
+This project is licensed under the **TCDOVERLORD Personal Learning License (TPLL) v1.0**.
 
-Copyright © 2026 **TCDOVERLORD**
+See the **LICENSE** file for complete terms.
 
-This project is released under the **TCDOVERLORD Personal Use License**.
+# Author
 
-- ✅ Personal Use
-- ✅ Educational Use
-- ✅ Learning
-- ❌ Commercial Use without permission
+**TCDOVERLORD**
 
----
+Building practical Windows utilities, automation tools, diagnostic scripts, and open-source learning projects.
 
-# 👤 Author
+# Support
 
-## TCDOVERLORD
+When opening an issue, include:
 
-Building practical Windows automation tools for developers, IT professionals, and power users.
+- Windows version
+- Bluetooth device
+- Phone model
+- Latest log from `logs/`
+- Steps already attempted
 
-> **We Automate So You Don't Have To.**
+## ⭐ Star History
 
----
+## Star History
 
-# ❤️ Support
+[![Star History Chart](https://api.star-history.com/chart?repos=tcdoverlord/SafeUSB-Eject-Windows11%2CWindows-Bluetooth-PhoneLink-Doctor/Windows-Bluetooth-PhoneLink-Doctor&type=date&legend=top-left&sealed_token=Uv2aKBy5S1VcscKkEOooMX-B0WyNB2qd4Q0ChbqP3gHMeK5sSu_VVZqZ-ZqOQoZYIeY_Cru-iEooz_LEnRdzYm3pnibyNQny8KKV-l3DHbIitCLnud-8uhqwHgLgC8-9JZYtCwqjQ0ceWnsojICZnmzJ8kvhyWrX7W9_mPmdzFCl4BIX6beFBiVIq-FA)](https://www.star-history.com/?repos=tcdoverlord%2FSafeUSB-Eject-Windows11%2CWindows-Bluetooth-PhoneLink-Doctor%2FWindows-Bluetooth-PhoneLink-Doctor&type=date&legend=top-left)
 
-If this project helped you:
+# Golden Rule
 
-- ⭐ Star the repository
-- 🐞 Report bugs through GitHub Issues
-- 💡 Submit feature requests
-- 🤝 Share the project with others
-
----
-
-# ⭐ Star History
-
-Star history will be added as the project grows.
+```text
+Build
+ ↓
+Test
+ ↓
+Document
+ ↓
+git status
+ ↓
+git add .
+ ↓
+git status
+ ↓
+git commit
+ ↓
+git push
+ ↓
+Verify
+ ↓
+Release
+```
